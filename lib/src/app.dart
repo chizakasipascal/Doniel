@@ -1,4 +1,4 @@
-import 'package:doniel/src/views/screens/loginscreens.dart';
+import 'package:doniel/src/views/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,7 +20,7 @@ class Doniel extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginScreens(),
+      home: const PageDoniel(),
       routes: Routes.routes,
     );
   }
