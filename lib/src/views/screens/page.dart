@@ -1,5 +1,8 @@
+import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
 
+import '../../const/const.dart';
+import '../views.dart';
 import '../widgets/scroll_hide.dart';
 
 class PageDoniel extends StatefulWidget {
@@ -59,20 +62,18 @@ class _PageDonielState extends State<PageDoniel> {
                             : _selectedIndex == 3
                                 ? "notification"
                                 : "Chat",
-                        style: const TextStyle(color: Colors.red),
-                        // style: themeData.textTheme.bodyText2!
-                        //     .copyWith(color: kGreyColor, fontSize: 16),
+                        style: themeData.textTheme.bodyText2!
+                            .copyWith(color: kDoniel, fontSize: 16),
                       ),
                       actions: [
                         GestureDetector(
-                          onTap: () {},
-                          //  => Navigator.pushNamed(
-                          //     context, Routes.notificationscreen),
+                          onTap: () =>
+                              Navigator.pushNamed(context, Routes.profile),
                           child: Container(
                             height: 40,
                             width: 40,
                             decoration: const BoxDecoration(
-                              color: Colors.grey,
+                              color: kDoniel,
                               shape: BoxShape.circle,
                             ),
                           ),
@@ -128,30 +129,20 @@ class _PageDonielState extends State<PageDoniel> {
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               currentIndex: _selectedIndex,
-              selectedItemColor: Colors.red,
-              unselectedItemColor: Colors.black,
-              // unselectedLabelStyle: themeData.textTheme.bodyText2,
-              // selectedLabelStyle: themeData.textTheme.bodyText2,
+              selectedItemColor: kDoniel,
+              unselectedItemColor: kBlackColor,
+              unselectedLabelStyle: themeData.textTheme.bodyText2,
+              selectedLabelStyle: themeData.textTheme.bodyText2,
             ),
           ),
           body: PageView(
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),
             children: <Widget>[
-              Center(
-                child: ListView.builder(
-                  controller: controller,
-                  itemCount: 6,
-                  itemBuilder: (context, i) {
-                    return const ListTile(
-                      title: Text("sss"),
-                    );
-                  },
-                ),
-              ),
-              const Center(child: Text('Cgat')),
-              const Center(child: Text('h')),
-              const Center(child: Text('t')),
+              Home(controller: controller),
+              Carre(controller: controller),
+              Chat(controller: controller),
+              NotificationPage(controller: controller)
             ],
             onPageChanged: (page) {
               setState(() {
