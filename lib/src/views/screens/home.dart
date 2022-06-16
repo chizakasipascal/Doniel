@@ -11,17 +11,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListView.builder(
+      child: ListView(
         controller: controller,
-        itemCount: 6,
-        itemBuilder: (context, i) {
-          return const ListTile(
-            title: Text(
-              "sss",
-              style: TextStyle(color: Colors.red),
-            ),
-          );
-        },
+        children: const [],
       ),
     );
   }
