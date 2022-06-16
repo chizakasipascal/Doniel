@@ -15,7 +15,7 @@ class Doniel extends StatelessWidget {
     ]);
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarColor: kDoniel,
       statusBarColor: Colors.transparent,
     ));
 
