@@ -22,7 +22,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
       slivers: [
         SliverAppBar(
           automaticallyImplyLeading: false,
-          expandedHeight: size.height * 0.5,
+          expandedHeight: size.height * 0.6,
           pinned: true,
           floating: true,
           flexibleSpace: FlexibleSpaceBar(
@@ -69,6 +69,107 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 60.0),
+                    child: Center(
+                      child: SizedBox(
+                        height: 200,
+                        width: size.width,
+                        child: Material(
+                          color: kWhiteColor.withOpacity(.3),
+                          elevation: 2.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '+243 XXX XXX XXX',
+                                      style: themeData.textTheme.bodyText2!
+                                          .copyWith(
+                                              color: kWhiteColor,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14.0),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      'Mobile number',
+                                      style: themeData.textTheme.bodyText2!
+                                          .copyWith(
+                                              color: kWhiteColor,
+                                              fontSize: 10.0),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 20),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '@Walker_wlk',
+                                          style: themeData.textTheme.bodyText2!
+                                              .copyWith(
+                                                  color: kWhiteColor,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14.0),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          'Nom uttilisateur',
+                                          style: themeData.textTheme.bodyText2!
+                                              .copyWith(
+                                                  color: kWhiteColor,
+                                                  fontSize: 10.0),
+                                        ),
+                                      ],
+                                    ),
+                                    const Spacer(),
+                                    const Icon(Icons.qr_code)
+                                  ],
+                                ),
+                                const SizedBox(height: 20),
+                                Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Notification',
+                                          style: themeData.textTheme.bodyText2!
+                                              .copyWith(
+                                                  color: kWhiteColor,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14.0),
+                                        ),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          'Active',
+                                          style: themeData.textTheme.bodyText2!
+                                              .copyWith(
+                                                  color: kWhiteColor,
+                                                  fontSize: 10.0),
+                                        ),
+                                      ],
+                                    ),
+                                    const Spacer(),
+                                    const Icon(Icons.notifications)
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -79,7 +180,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
           children: [
             Expanded(
               child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: Colors.white,
                 child: TabBarView(
                   controller: controllerForMainTabVarView,
                   children: const [
