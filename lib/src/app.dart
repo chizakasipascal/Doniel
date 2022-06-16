@@ -1,7 +1,8 @@
+import 'package:doniel/src/const/strings.dart';
 import 'package:doniel/src/views/views.dart';
+import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'const/routes.dart';
 
 class Doniel extends StatelessWidget {
@@ -20,6 +21,8 @@ class Doniel extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: themeData,
+      title: Strings.appName,
       home: const PageDoniel(),
       routes: Routes.routes,
     );
