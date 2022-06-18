@@ -6,7 +6,7 @@ import 'dart:io' show Platform;
 
 import 'font_family.dart';
 
-const Color colorDefaultFont = kBlackColor;
+const Color colorDefaultFont = kGreyColor;
 final ThemeData themeData = ThemeData(
   brightness: Brightness.dark,
   fontFamily: Platform.isAndroid
@@ -51,7 +51,10 @@ final ThemeData themeData = ThemeData(
               fontWeight: FontWeight.w400,
               letterSpacing: 0.15),
           subtitle2: GoogleFonts.roboto(
-              fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+              color: colorDefaultFont,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.1),
           bodyText1: GoogleFonts.roboto(
               color: colorDefaultFont,
               fontSize: 16,
@@ -89,15 +92,24 @@ final ThemeData themeData = ThemeData(
               fontSize: 61,
               fontWeight: FontWeight.w300,
               letterSpacing: -0.5),
-          headline3: const TextStyle(fontSize: 48, fontWeight: FontWeight.w400),
+          headline3: GoogleFonts.roboto(
+              color: colorDefaultFont,
+              fontSize: 48,
+              fontWeight: FontWeight.w400),
           headline4: GoogleFonts.roboto(
               color: colorDefaultFont,
               fontSize: 34,
               fontWeight: FontWeight.w400,
               letterSpacing: 0.25),
-          headline5: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
-          headline6: const TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.15),
+          headline5: GoogleFonts.roboto(
+              color: colorDefaultFont,
+              fontSize: 24,
+              fontWeight: FontWeight.w400),
+          headline6: GoogleFonts.roboto(
+              color: colorDefaultFont,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 0.15),
           subtitle1: const TextStyle(
               color: colorDefaultFont,
               fontSize: 16,
@@ -134,7 +146,7 @@ final ThemeData themeData = ThemeData(
               fontWeight: FontWeight.w400,
               letterSpacing: 1.5),
         ),
-  scaffoldBackgroundColor: Colors.transparent,
+  scaffoldBackgroundColor: kWhiteColor,
   primaryColor: kDoniel,
   splashColor: kDoniel.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,
