@@ -109,23 +109,23 @@ class MethodPayement extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon, size: 40),
-              Text.rich(
-                textAlign: TextAlign.center,
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: description,
-                      style: themeData.textTheme.bodyText2!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "\n$subdescription",
-                    )
-                  ],
-                ),
-              ),
+              // Text.rich(
+              //   textAlign: TextAlign.center,
+              //   TextSpan(0
+              //     children: [
+              //       TextSpan(
+              //         text: description,
+              //         style: themeData.textTheme.bodyText2!.copyWith(
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 16.0,
+              //         ),
+              //       ),
+              //       TextSpan(
+              //         text: "\n$subdescription",
+              //       )
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),
