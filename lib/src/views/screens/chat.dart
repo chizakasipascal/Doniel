@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Chat extends StatelessWidget {
-  const Chat({
+class Profile extends StatelessWidget {
+  const Profile({
     Key? key,
     required this.controller,
   }) : super(key: key);

@@ -146,7 +146,7 @@ final ThemeData themeData = ThemeData(
               fontWeight: FontWeight.w400,
               letterSpacing: 1.5),
         ),
-  scaffoldBackgroundColor: kWhiteColor,
+  scaffoldBackgroundColor: Colors.white,
   primaryColor: kDoniel,
   splashColor: kDoniel.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,

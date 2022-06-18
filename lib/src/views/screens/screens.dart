@@ -4,4 +4,3 @@ export 'home.dart';
 export 'carre.dart';
 export 'chat.dart';
 export 'notificationpage.dart';
-export 'profile.dart';

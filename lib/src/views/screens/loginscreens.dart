@@ -2,6 +2,7 @@ import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
+import '../../const/const.dart';
 import '../views.dart';
 
 class LoginScreens extends StatefulWidget {
@@ -141,7 +142,8 @@ class _LoginScreensState extends State<LoginScreens> {
                           width: double.infinity,
                           child: MaterialButton(
                             color: kDoniel,
-                            onPressed: () {},
+                            onPressed: () =>
+                                Navigator.popAndPushNamed(context, Routes.page),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                             ),
