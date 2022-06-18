@@ -15,15 +15,16 @@ class Doniel extends StatelessWidget {
     ]);
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      systemNavigationBarColor: kDoniel,
+      systemNavigationBarColor: Colors.transparent,
       statusBarColor: Colors.transparent,
     ));
-
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeData,
       title: Strings.appName,
-      home: const PageDoniel(),
+      home: LoginScreens(),
       routes: Routes.routes,
     );
   }
