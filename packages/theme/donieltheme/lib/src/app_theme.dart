@@ -7,9 +7,9 @@ final ThemeData themeData = ThemeData(
   brightness: Brightness.dark,
   fontFamily: FontFamily.sanFrancisco,
   textTheme: const TextTheme(
-    bodyText2: TextStyle(color: kWhiteColor),
+    bodyText2: TextStyle(color: kBlackColor),
   ),
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: kWhiteColor,
   primaryColor: kDoniel,
   splashColor: kDoniel.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,

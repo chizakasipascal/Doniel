@@ -1,3 +1,4 @@
+import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -10,18 +11,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
+    final size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: ListView(
         controller: controller,
-        itemCount: 6,
-        itemBuilder: (context, i) {
-          return const ListTile(
-            title: Text(
-              "sss",
-              style: TextStyle(color: Colors.red),
+        children: [
+          Card(
+            child: Column(
+              children: const [],
             ),
-          );
-        },
+          )
+        ],
       ),
     );
   }

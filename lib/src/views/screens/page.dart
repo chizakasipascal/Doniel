@@ -1,6 +1,6 @@
 import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../const/const.dart';
 import '../views.dart';
 import '../widgets/scroll_hide.dart';
@@ -44,45 +44,43 @@ class _PageDonielState extends State<PageDoniel> {
         //   viewLogo: false,
         // ),
         Scaffold(
-          appBar: (_selectedIndex == 1 ||
-                  _selectedIndex == 2 ||
-                  _selectedIndex == 3)
-              ? PreferredSize(
-                  preferredSize: const Size.fromHeight(80.0),
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(top: 0.0, left: 10, right: 10),
-                    child: AppBar(
-                      elevation: 0.0,
-                      backgroundColor: Colors.transparent,
-                      centerTitle: true,
-                      title: Text(
-                        _selectedIndex == 1
-                            ? "Carre"
-                            : _selectedIndex == 3
-                                ? "notification"
-                                : "Chat",
-                        style: themeData.textTheme.bodyText2!
-                            .copyWith(color: kDoniel, fontSize: 16),
-                      ),
-                      actions: [
-                        GestureDetector(
-                          onTap: () =>
-                              Navigator.pushNamed(context, Routes.profile),
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            decoration: const BoxDecoration(
-                              color: kDoniel,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+          appBar: (PreferredSize(
+            preferredSize: const Size.fromHeight(80.0),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 0.0, left: 10, right: 10),
+              child: AppBar(
+                elevation: 0.0,
+                backgroundColor: Colors.transparent,
+                centerTitle: true,
+                title: Text(
+                  _selectedIndex == 0
+                      ? "Home"
+                      : _selectedIndex == 1
+                          ? "Carre"
+                          : _selectedIndex == 2
+                              ? "Chat"
+                              : "Notification",
+                  style: themeData.textTheme.bodyText2!.copyWith(
+                    color: kDoniel,
+                    fontSize: 26,
                   ),
-                )
-              : null,
+                ),
+                actions: [
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, Routes.profile),
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: const BoxDecoration(
+                        color: kDoniel,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )),
           bottomNavigationBar: ScrolHide(
             controller: controller,
             child: BottomNavigationBar(
@@ -90,11 +88,9 @@ class _PageDonielState extends State<PageDoniel> {
                 BottomNavigationBarItem(
                   icon: SizedBox(
                     height: height,
-                    // child: Image.asset(
-                    //   Assets.connectis,
-                    // ),
+                    child: const Icon(AntDesign.home),
                   ),
-                  label: "Home",
+                  label: "",
                 ),
                 BottomNavigationBarItem(
                   icon: SizedBox(
@@ -103,7 +99,7 @@ class _PageDonielState extends State<PageDoniel> {
                     //   Assets.chat,
                     // ),
                   ),
-                  label: "carre",
+                  label: "Carre",
                 ),
                 BottomNavigationBarItem(
                   icon: SizedBox(
@@ -121,7 +117,7 @@ class _PageDonielState extends State<PageDoniel> {
                     //   Assets.telephone,
                     // ),
                   ),
-                  label: "notification",
+                  label: "Notification",
                 ),
               ],
               onTap: _onTappedBar,
