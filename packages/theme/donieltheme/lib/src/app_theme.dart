@@ -9,7 +9,7 @@ final ThemeData themeData = ThemeData(
   textTheme: const TextTheme(
     bodyText2: TextStyle(color: kBlackColor),
   ),
-  scaffoldBackgroundColor: kWhiteColor,
+  scaffoldBackgroundColor: Colors.transparent,
   primaryColor: kDoniel,
   splashColor: kDoniel.withOpacity(.5),
   visualDensity: VisualDensity.adaptivePlatformDensity,

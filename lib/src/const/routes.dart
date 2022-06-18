@@ -10,7 +10,7 @@ class Routes {
 
   static final routes = <String, WidgetBuilder>{
     // initial: (context) => const LoginScreens(),
-    login: (context) => const LoginScreens(),
+    login: (context) => LoginScreens(),
     profile: (context) => const Profile(),
     page: (context) => const PageDoniel(),
   };

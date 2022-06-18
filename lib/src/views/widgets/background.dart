@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import '../../const/assets.dart';
 
 class BuildBackground extends StatelessWidget {
-  final String image;
-
-  final bool viewLogo;
-  const BuildBackground(
-      {Key? key, this.image = Assets.background, this.viewLogo = false})
-      : super(key: key);
+  const BuildBackground({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +16,10 @@ class BuildBackground extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints.expand(),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  image,
+                  Assets.background,
                 ),
                 fit: BoxFit.cover,
               ),
