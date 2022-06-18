@@ -18,13 +18,14 @@ class Doniel extends StatelessWidget {
       systemNavigationBarColor: Colors.transparent,
       statusBarColor: Colors.transparent,
     ));
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: [SystemUiOverlay.top]);
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
+    //   SystemUiOverlay.top,
+    // ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: themeData,
       title: Strings.appName,
-      home: LoginScreens(),
+      home: const LoginScreens(),
       routes: Routes.routes,
     );
   }

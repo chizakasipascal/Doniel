@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Carre extends StatelessWidget {
-  const Carre({
+class NOtification extends StatelessWidget {
+  const NOtification({
     Key? key,
     required this.controller,
   }) : super(key: key);
