@@ -1,6 +1,6 @@
 import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
-import '../../const/assets.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../views.dart';
 import '../widgets/scroll_hide.dart';
 
@@ -46,42 +46,33 @@ class _PageDonielState extends State<PageDoniel> {
           bottomNavigationBar: ScrolHide(
             controller: controller,
             child: BottomNavigationBar(
-              items: [
+              items: const [
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    height: height,
-                    child: Image.asset(
-                      Assets.home,
-                    ),
+                  icon: Icon(
+                    AntDesign.home,
                   ),
-                  label: "Home",
+                  label: "",
                 ),
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    height: height,
-                    child: Image.asset(
-                      Assets.notification,
-                    ),
+                  icon: Icon(
+                    FontAwesome.bell_o,
                   ),
-                  label: "Notification",
+                  label: "",
                 ),
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    height: height,
-                    child: Image.asset(
-                      Assets.user,
-                    ),
+                  icon: Icon(
+                    FontAwesome.user_o,
                   ),
-                  label: "User",
+                  label: "",
                 ),
               ],
               onTap: _onTappedBar,
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white,
               elevation: 0.0,
               currentIndex: _selectedIndex,
               selectedItemColor: kDoniel,
-              unselectedItemColor: kBlackColor,
+              unselectedItemColor: kGreyColor,
               unselectedLabelStyle: themeData.textTheme.caption,
               selectedLabelStyle: themeData.textTheme.caption,
             ),
