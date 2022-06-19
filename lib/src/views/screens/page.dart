@@ -82,7 +82,7 @@ class _PageDonielState extends State<PageDoniel> {
             physics: const NeverScrollableScrollPhysics(),
             children: <Widget>[
               Home(controller: controller),
-              NOtification(controller: controller),
+              NotificationPage(controller: controller),
               Profile(controller: controller),
             ],
             onPageChanged: (page) {
