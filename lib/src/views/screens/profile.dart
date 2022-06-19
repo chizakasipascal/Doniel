@@ -1,5 +1,7 @@
+import 'package:doniel/src/const/assets.dart';
 import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
@@ -53,8 +55,25 @@ class Profile extends StatelessWidget {
         body: ListView(
           controller: controller,
           children: [
-            Column(
-              children: const [Text('Profile uttilisateur')],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  const Icon(
+                    AntDesign.home,
+                    color: kGreyColor,
+                  ),
+                  Text(
+                    'Lives in ',
+                    style: themeData.textTheme.bodyText2,
+                  ),
+                  Text(
+                    'Goma.DRC',
+                    style:
+                        themeData.textTheme.bodyText2!.copyWith(color: kDoniel),
+                  ),
+                ],
+              ),
             )
           ],
         ),
@@ -70,86 +89,107 @@ class BackgroundProfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Container(
-          width: 150,
-          height: 150,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage("assets/images/cute.jpg"),
-              fit: BoxFit.cover,
+        Stack(
+          children: [
+            Container(
+              width: 140,
+              height: 140,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 7),
+                image: const DecorationImage(
+                  image: AssetImage(Assets.cute),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
+            Positioned(
+              bottom: 0,
+              right: 15,
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white, width: 3),
+                ),
+                child: const Icon(
+                  AntDesign.pluscircle,
+                  color: kDoniel,
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 10),
         Text(
-          'Fidele fidgBa',
-          style: themeData.textTheme.bodyText2!.copyWith(
+          'Denis Taukin',
+          style: themeData.textTheme.headline4!.copyWith(
             color: kBlackColor,
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 5),
         Text(
-          'Founder and UI&UX Designer\nat FidbaGraphics',
+          'Mobile apps and E-commerce UI/UX designer,working worldwide',
           textAlign: TextAlign.center,
-          style: themeData.textTheme.bodyText2!.copyWith(
-            height: 1.5,
-          ),
+          style: themeData.textTheme.bodyLarge!.copyWith(
+              height: 1.5,
+              color: kBlackColor.withOpacity(.7),
+              fontWeight: FontWeight.w500),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 60,
-              width: 60,
+              //  width: 60,
               child: Column(
                 children: [
                   Text(
-                    '12.1 k',
+                    '34',
                     style: themeData.textTheme.bodyText2!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: kBlackColor,
                     ),
                   ),
-                  Text('Followers', style: themeData.textTheme.caption),
+                  Text('Friends', style: themeData.textTheme.bodyText2),
                 ],
               ),
             ),
             SizedBox(
               height: 60,
-              width: 60,
+              // width: 60,
               child: Column(
                 children: [
                   Text(
-                    '100',
+                    '1,500',
                     style: themeData.textTheme.bodyText2!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: kBlackColor,
                     ),
                   ),
-                  Text('Following', style: themeData.textTheme.caption),
+                  Text('Followers', style: themeData.textTheme.bodyText2),
                 ],
               ),
             ),
             SizedBox(
               height: 60,
-              width: 60,
+              //  width: 60,
               child: Column(
                 children: [
                   Text(
-                    '3k',
+                    '274',
                     style: themeData.textTheme.bodyText2!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: kBlackColor,
                     ),
                   ),
-                  Text('Tags', style: themeData.textTheme.caption),
+                  Text('Followings', style: themeData.textTheme.bodyText2),
                 ],
               ),
             )
@@ -215,7 +255,11 @@ class BackgroundProfil extends StatelessWidget {
               )
             ],
           ),
-        )
+        ),
+        Container(
+          height: 1,
+          color: kGreyColor,
+        ),
       ],
     );
   }
