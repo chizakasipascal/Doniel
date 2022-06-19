@@ -54,7 +54,7 @@ class Profile extends StatelessWidget {
           controller: controller,
           children: [
             Column(
-              children: const [Text('data')],
+              children: const [Text('Profile uttilisateur')],
             )
           ],
         ),

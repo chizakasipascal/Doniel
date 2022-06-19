@@ -242,6 +242,131 @@ class CardPost extends StatelessWidget {
                   subdescription: 99,
                 ),
               ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 4,
+                    ),
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(imageMain),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Container(
+                  height: 50,
+                  width: size.width * .59,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: kGreyColor.withOpacity(.3),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Write a comment...',
+                        style: themeData.textTheme.bodyText2,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 5),
+                const Icon(
+                  Icons.gif_box_outlined,
+                  color: kGreyColor,
+                ),
+                const SizedBox(width: 5),
+                const Icon(
+                  Icons.tag_faces,
+                  color: kGreyColor,
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 60.0, top: 10),
+              child: SizedBox(
+                height: 150,
+                child: ListView.builder(
+                  itemCount: 1,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: ((context, index) => Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 4,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage(imageMain),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    name,
+                                    style:
+                                        themeData.textTheme.bodyLarge!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: kBlackColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 40.0),
+                                    child: SizedBox(
+                                      width: size.width * .5,
+                                      child: Text(
+                                        description,
+                                        style: themeData.textTheme.bodyText2!
+                                            .copyWith(
+                                          color: kBlackColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: const [
+                                      CardPostButtom(),
+                                      CardPostButtom(
+                                        description: Icons.tag_faces,
+                                        subdescription: 95,
+                                      ),
+                                      CardPostButtom(
+                                        description: Icons.share,
+                                        subdescription: 99,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ),
             )
           ],
         ),
