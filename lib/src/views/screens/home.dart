@@ -14,14 +14,11 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return ListView(
+    return ListView.builder(
+      itemCount: 6,
+      itemBuilder: ((context, index) => CardPost(size: size)),
       controller: controller,
       physics: const BouncingScrollPhysics(),
-      children: [
-        CardPost(size: size),
-        CardPost(size: size),
-        CardPost(size: size)
-      ],
     );
 
     // DefaultTabController(
@@ -102,12 +99,12 @@ class CardPost extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 10),
       decoration: const BoxDecoration(color: Colors.white),
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10),
+            child: Row(
               children: [
                 Stack(
                   children: [
@@ -172,65 +169,71 @@ class CardPost extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-            Text(
+          ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            child: Text(
               description,
               style: themeData.textTheme.bodyText2!.copyWith(
                 color: kBlackColor,
               ),
             ),
-            const SizedBox(height: 20),
-            SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  const SizedBox(height: 20),
-                  Container(
-                    height: size.height * .3,
-                    width: size.width * .7,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage(imageSub),
-                        fit: BoxFit.cover,
-                      ),
+          ),
+          const SizedBox(height: 20),
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                const SizedBox(height: 20),
+                Container(
+                  height: size.height * .3,
+                  width: size.width * .7,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: AssetImage(imageSub),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: size.height * .15,
-                        width: size.width * .5,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(imageSub2),
-                            fit: BoxFit.cover,
-                          ),
+                ),
+                const SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: size.height * .15,
+                      width: size.width * .5,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(imageSub2),
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(height: 5),
-                      Container(
-                        height: size.height * .15,
-                        width: size.width * .5,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(imageSub2),
-                            fit: BoxFit.cover,
-                          ),
+                    ),
+                    const SizedBox(height: 5),
+                    Container(
+                      height: size.height * .15,
+                      width: size.width * .5,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(imageSub2),
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    ],
-                  )
-                ],
-              ),
+                    ),
+                  ],
+                )
+              ],
             ),
-            const SizedBox(height: 10),
-            Row(
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            child: Row(
               children: const [
                 CardPostButtom(),
                 CardPostButtom(
@@ -243,8 +246,11 @@ class CardPost extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
-            Row(
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+            child: Row(
               children: [
                 Container(
                   height: 50,
@@ -292,84 +298,84 @@ class CardPost extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 60.0, top: 10),
-              child: SizedBox(
-                height: 150,
-                child: ListView.builder(
-                  itemCount: 1,
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: ((context, index) => Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: 4,
-                                      ),
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: AssetImage(imageMain),
-                                        fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 60.0, top: 10),
+            child: SizedBox(
+              height: 150,
+              child: ListView.builder(
+                itemCount: 1,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: ((context, index) => Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 4,
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      image: AssetImage(imageMain),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  name,
+                                  style:
+                                      themeData.textTheme.bodyLarge!.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: kBlackColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 40.0),
+                                  child: SizedBox(
+                                    width: size.width * .7,
+                                    child: Text(
+                                      description,
+                                      style: themeData.textTheme.bodyText2!
+                                          .copyWith(
+                                        color: kBlackColor,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    name,
-                                    style:
-                                        themeData.textTheme.bodyLarge!.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: kBlackColor,
+                                ),
+                                Row(
+                                  children: const [
+                                    CardPostButtom(),
+                                    CardPostButtom(
+                                      description: Icons.tag_faces,
+                                      subdescription: 95,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 40.0),
-                                    child: SizedBox(
-                                      width: size.width * .5,
-                                      child: Text(
-                                        description,
-                                        style: themeData.textTheme.bodyText2!
-                                            .copyWith(
-                                          color: kBlackColor,
-                                        ),
-                                      ),
+                                    CardPostButtom(
+                                      description: Icons.share,
+                                      subdescription: 99,
                                     ),
-                                  ),
-                                  Row(
-                                    children: const [
-                                      CardPostButtom(),
-                                      CardPostButtom(
-                                        description: Icons.tag_faces,
-                                        subdescription: 95,
-                                      ),
-                                      CardPostButtom(
-                                        description: Icons.share,
-                                        subdescription: 99,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      )),
-                ),
+                                  ],
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    )),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
