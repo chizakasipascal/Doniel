@@ -180,31 +180,23 @@ class _LoginScreensState extends State<LoginScreens> {
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: const [
                                   SizedBox(
                                     height: 50,
                                     width: 50,
                                     child: Icon(
                                       AntDesign.google,
-                                      color: kGreyColor,
+                                      color: Color.fromARGB(255, 230, 66, 66),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 50,
-                                    width: 50,
-                                    child: Icon(
-                                      AntDesign.apple1,
-                                      color: kGreyColor,
-                                    ),
-                                  ),
+                                  SizedBox(width: 20),
                                   SizedBox(
                                     height: 50,
                                     width: 50,
                                     child: Icon(
                                       AntDesign.facebook_square,
-                                      color: kGreyColor,
+                                      color: Color.fromARGB(255, 23, 98, 135),
                                     ),
                                   )
                                 ],

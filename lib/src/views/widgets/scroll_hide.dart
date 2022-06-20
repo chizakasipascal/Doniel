@@ -8,7 +8,7 @@ class ScrolHide extends StatefulWidget {
     Key? key,
     required this.child,
     required this.controller,
-    this.duration = const Duration(milliseconds: 200),
+    this.duration = const Duration(milliseconds: 1000),
   }) : super(key: key);
 
   @override
@@ -50,6 +50,7 @@ class _ScrolHideState extends State<ScrolHide> {
   @override
   Widget build(BuildContext context) => AnimatedContainer(
         duration: widget.duration,
+        curve: Curves.decelerate,
         height: isVisible ? kBottomNavigationBarHeight : 0,
         child: Wrap(
           children: [widget.child],

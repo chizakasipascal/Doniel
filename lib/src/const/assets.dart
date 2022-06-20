@@ -9,4 +9,5 @@ class Assets {
   static const String home = "${baseAsstes}home.png";
   static const String notification = "${baseAsstes}notification.png";
   static const String user = "${baseAsstes}user.png";
+  static const String cute = "${baseAsstes}cute.jpg";
 }
