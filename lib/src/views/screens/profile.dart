@@ -195,7 +195,7 @@ class BackgroundProfil extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.white, width: 7),
                 image: const DecorationImage(
-                  image: AssetImage(Assets.cute),
+                  image: AssetImage(Assets.profile),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -218,20 +218,22 @@ class BackgroundProfil extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          'Denis Taukin',
+          'Fidel Bashizi',
           style: themeData.textTheme.headline4!.copyWith(
             color: kBlackColor,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 5),
-        Text(
-          'Mobile apps and E-commerce UI/UX designer,working worldwide',
-          textAlign: TextAlign.center,
-          style: themeData.textTheme.bodyLarge!.copyWith(
-              height: 1.5,
-              color: kBlackColor.withOpacity(.7),
-              fontWeight: FontWeight.w500),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Highly creative and multitalented Graphic Designer with extensive experience in multimedia, marketing, and print design',
+            textAlign: TextAlign.center,
+            style: themeData.textTheme.bodyText2!.copyWith(
+                height: 1.5,
+                color: kBlackColor.withOpacity(.7),
+                fontWeight: FontWeight.w500),
+          ),
         ),
         const SizedBox(height: 10),
         Row(
