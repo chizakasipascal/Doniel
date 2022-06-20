@@ -1,7 +1,8 @@
-import 'package:doniel/src/const/assets.dart';
 import 'package:donieltheme/donieltheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+
+import '../../const/assets.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -78,18 +79,25 @@ class Home extends StatelessWidget {
 }
 
 class CardPost extends StatelessWidget {
-  final String description, name, dateTime, imageMain, imageSub, imageSub2;
+  final String description,
+      name,
+      dateTime,
+      imageMain,
+      imageprofile,
+      imageSub,
+      imageSub2;
 
   const CardPost({
     Key? key,
     required this.size,
     this.description =
-        ',Reloaded 1 of 968 libraries in 1,745ms.Reloaded 1 of 968 libraries in 1,610ms.Reloaded 1 of 968 libraries in 1,807ms.',
-    this.name = "Jerome Bell",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has",
+    this.name = "Fidel Bashizi",
     this.dateTime = "August 15 at 18:36",
-    this.imageMain = Assets.cute,
-    this.imageSub = Assets.cute,
-    this.imageSub2 = Assets.cute,
+    this.imageMain = Assets.post,
+    this.imageSub = Assets.post,
+    this.imageSub2 = Assets.post,
+    this.imageprofile = Assets.profile,
   }) : super(key: key);
 
   final Size size;
@@ -118,7 +126,7 @@ class CardPost extends StatelessWidget {
                         ),
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage(imageMain),
+                          image: AssetImage(imageprofile),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -175,6 +183,8 @@ class CardPost extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20.0, right: 20.0),
             child: Text(
               description,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 3,
               style: themeData.textTheme.bodyText2!.copyWith(
                 color: kBlackColor,
               ),
@@ -262,7 +272,7 @@ class CardPost extends StatelessWidget {
                     ),
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage(imageMain),
+                      image: AssetImage(imageprofile),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -270,7 +280,7 @@ class CardPost extends StatelessWidget {
                 const SizedBox(width: 10),
                 Container(
                   height: 50,
-                  width: size.width * .59,
+                  width: size.width * .5,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: kGreyColor.withOpacity(.3),
@@ -328,11 +338,11 @@ class CardPost extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                const SizedBox(width: 5),
                                 Text(
                                   name,
                                   style:
-                                      themeData.textTheme.bodyLarge!.copyWith(
-                                    fontWeight: FontWeight.bold,
+                                      themeData.textTheme.bodyText2!.copyWith(
                                     color: kBlackColor,
                                   ),
                                 ),
@@ -344,13 +354,10 @@ class CardPost extends StatelessWidget {
                                   padding: const EdgeInsets.only(left: 40.0),
                                   child: SizedBox(
                                     width: size.width * .7,
-                                    child: Text(
-                                      description,
-                                      style: themeData.textTheme.bodyText2!
-                                          .copyWith(
-                                        color: kBlackColor,
-                                      ),
-                                    ),
+                                    child: Text(description,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                        style: themeData.textTheme.caption),
                                   ),
                                 ),
                                 Row(
@@ -365,6 +372,12 @@ class CardPost extends StatelessWidget {
                                       subdescription: 99,
                                     ),
                                   ],
+                                ),
+                                Text(
+                                  'seen more ...',
+                                  style: themeData.textTheme.caption!.copyWith(
+                                    color: kDoniel,
+                                  ),
                                 ),
                               ],
                             )
